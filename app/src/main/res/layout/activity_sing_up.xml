@@ -26,13 +26,14 @@
         </ImageView>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-32dp"
             android:layout_marginBottom="20dp"
             android:text="@string/title_sing_up"
             android:textSize="20sp"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:gravity="center">
         </TextView>
 
         <LinearLayout
