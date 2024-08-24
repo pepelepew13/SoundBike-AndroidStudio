@@ -55,8 +55,9 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/border_input">
+                android:layout_height="40dp"
+                android:background="@drawable/border_input"
+                android:paddingStart="10dp">
 
             </EditText>
 
@@ -73,8 +74,9 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/border_input">
+                android:layout_height="40dp"
+                android:background="@drawable/border_input"
+                android:paddingStart="10dp">
 
             </EditText>
 
@@ -92,13 +94,15 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/border_input">
+                android:layout_height="40dp"
+                android:background="@drawable/border_input"
+                android:paddingStart="10dp">
 
             </EditText>
         </LinearLayout>
 
         <Button
+            android:id="@+id/Btn_New_User"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/title_btn_sing_up"

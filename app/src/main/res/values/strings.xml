@@ -22,5 +22,13 @@
     <string name="title_new_password">Crea tu contraseña*</string>
     <string name="title_btn_sing_up">Registrarse</string>
 
+    //Pantalla Home
+
+    <string name="welcome">¡Bienvenido!</string>
+    <string name="age">Escribe el año actual</string>
+    <string name="btn_question">Responder</string>
+    <string name="copyright">by SoundBike 2024 ©</string>
+
+
 
 </resources>

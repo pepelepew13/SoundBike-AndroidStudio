@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         startCounter++;
         Log.d(TAG, "Estoy en el onStart");
-        Toast.makeText(this, "Estoy en el onStart " + startCounter, Toast.LENGTH_SHORT).show();
     }
 
     @Override
