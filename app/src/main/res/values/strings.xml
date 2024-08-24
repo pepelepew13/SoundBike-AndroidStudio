@@ -1,4 +1,17 @@
 <resources>
+
+    //Pantalla inicio
+
     <string name="app_name">SoundBike</string>
     <string name="entrar">Entrar</string>
+
+    //Pantalla login
+
+    <string name="title_login">¡Te damos la bienvenida de nuevo!</string>
+    <string name="title_user">Usuario*</string>
+    <string name="title_password">Contraseña*</string>
+    <string name="title_btn_login">Iniciar sesión</string>
+    <string name="title_singup">¿No tienes cuenta?</string>
+    <string name="title_btn_singup">Registrate</string>
+
 </resources>
