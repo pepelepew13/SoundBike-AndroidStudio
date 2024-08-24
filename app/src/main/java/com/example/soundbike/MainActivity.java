@@ -1,7 +1,9 @@
 package com.example.soundbike;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -12,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     String TAG = "Test";
+    Button btn_entrar;
     private int startCounter = 0;
     private int resumeCounter = 0;
     private int pauseCounter = 0;
@@ -23,51 +26,64 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // Ajuste de padding según insets de sistema
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Encuentra el botón por su ID
+        btn_entrar = findViewById(R.id.Btn_Entrar);
+
+        // Configura el click listener
+        btn_entrar.setOnClickListener(v -> {
+            // Crea un Intent para ir a LoginActivity
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
 
+    // Entendiendo el ciclo del aplicatico
     @Override
     protected void onStart() {
         super.onStart();
-        startCounter ++;
+        startCounter++;
         Log.d(TAG, "Estoy en el onStart");
-        Toast.makeText(this, "Estoy en el onStart "+ startCounter, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Estoy en el onStart " + startCounter, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        resumeCounter ++;
+        resumeCounter++;
         Log.d(TAG, "Estoy en el onResume");
-        Toast.makeText(this, "Estoy en el onResume "+ resumeCounter, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Estoy en el onResume " + resumeCounter, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        pauseCounter ++;
+        pauseCounter++;
         Log.d(TAG, "Estoy en el onPause");
-        Toast.makeText(this, "Estoy en el onPause "+ pauseCounter, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Estoy en el onPause " + pauseCounter, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        stopCounter ++;
+        stopCounter++;
         Log.d(TAG, "Estoy en el onStop");
-        Toast.makeText(this, "Estoy en el onStop "+stopCounter, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Estoy en el onStop " + stopCounter, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        restartCounter ++;
+        restartCounter++;
         Log.d(TAG, "Estoy en el onRestart");
-        Toast.makeText(this, "Estoy en el onRestart "+restartCounter, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Estoy en el onRestart " + restartCounter, Toast.LENGTH_SHORT).show();
     }
 
     @Override
