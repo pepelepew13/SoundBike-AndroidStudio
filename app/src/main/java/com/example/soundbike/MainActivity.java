@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         btn_entrar = findViewById(R.id.Btn_Entrar);
 
         // Configura el click listener
-        btn_entrar.setOnClickListener(v -> {
+        btn_entrar.setOnClickListener(view -> {
             // Crea un Intent para ir a LoginActivity
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
+            Intent ToLogin = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(ToLogin);
         });
     }
 

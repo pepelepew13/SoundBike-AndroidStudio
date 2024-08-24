@@ -14,4 +14,13 @@
     <string name="title_singup">¿No tienes cuenta?</string>
     <string name="title_btn_singup">Registrate</string>
 
+    //Pantalla Sing Up
+
+    <string name="title_sing_up">¡Crear una cuenta!</string>
+    <string name="title_new_user">Crea un usuario*</string>
+    <string name="title_new_email">Ingresa tu Correo electronico*</string>
+    <string name="title_new_password">Crea tu contraseña*</string>
+    <string name="title_btn_sing_up">Registrarse</string>
+
+
 </resources>

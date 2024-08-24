@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
+    tools:context=".SingUpActivity"
     android:orientation="vertical"
     android:background="@color/Background"
     android:gravity="center">
@@ -29,25 +29,43 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-32dp"
-            android:layout_marginBottom="32dp"
-            android:text="@string/title_login"
+            android:layout_marginBottom="20dp"
+            android:text="@string/title_sing_up"
             android:textSize="20sp"
-            android:textStyle="bold"
-            >
+            android:textStyle="bold">
         </TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="142dp"
+            android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="2dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="@string/title_user"
+                android:text="@string/title_new_user"
+                android:textSize="20sp"
+                android:textStyle="italic">
+
+            </TextView>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/border_input">
+
+            </EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="@string/title_new_email"
                 android:textSize="20sp"
                 android:textStyle="italic">
 
@@ -66,7 +84,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
-                android:text="@string/title_password"
+                android:text="@string/title_new_password"
                 android:textSize="20sp"
                 android:textStyle="italic">
 
@@ -81,29 +99,9 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/Btn_Login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_btn_login"
-            android:backgroundTint="@color/Button"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:layout_margin="20dp">
-        </Button>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_singup"
-            android:textSize="15sp"
-            android:textStyle="bold">
-        </TextView>
-
-        <Button
-            android:id="@+id/Btn_Sing_Up"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_btn_singup"
+            android:text="@string/title_btn_sing_up"
             android:backgroundTint="@color/Button"
             android:textColor="@color/black"
             android:textSize="22sp"
