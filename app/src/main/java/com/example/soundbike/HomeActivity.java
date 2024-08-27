@@ -1,8 +1,10 @@
 package com.example.soundbike;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -11,9 +13,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public class HomeActivity extends AppCompatActivity {
     EditText respuestaEditText;
     Button btnRespuesta;
+    FrameLayout animationOverlay;
+    LottieAnimationView animationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,24 +35,34 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         // Inicialización de los elementos del layout
-        respuestaEditText = findViewById(R.id.Respuesta); // EditText donde se ingresa la respuesta
-        btnRespuesta = findViewById(R.id.Btn_Respuesta);  // Botón para enviar la respuesta
+        respuestaEditText = findViewById(R.id.Respuesta);
+        btnRespuesta = findViewById(R.id.Btn_Respuesta);
+        animationOverlay = findViewById(R.id.animation_overlay); // FrameLayout que contiene la animación
+        animationView = findViewById(R.id.animationView); // LottieAnimationView
 
         // Listener para el botón
         btnRespuesta.setOnClickListener(view -> {
-            String respuesta = respuestaEditText.getText().toString().trim(); // Obtener y limpiar el texto ingresado
+            String respuesta = respuestaEditText.getText().toString().trim();
 
-            if (!respuesta.isEmpty()) { // Verificar si el campo no está vacío
-                int respuestaInt = Integer.parseInt(respuesta); // Convertir a número
+            if (!respuesta.isEmpty()) {
+                int respuestaInt = Integer.parseInt(respuesta);
 
-                // Comprobar si la respuesta es correcta
                 if (respuestaInt == 2024) {
-                    Toast.makeText(this, "Respuesta correcta", Toast.LENGTH_SHORT).show(); // Mensaje para respuesta correcta
+                    Toast.makeText(this, "Respuesta correcta", Toast.LENGTH_SHORT).show();
+
+                    // Mostrar animación
+                    animationOverlay.setVisibility(view.VISIBLE);
+                    animationView.playAnimation();
+
+                    // Ocultar animación después de 3 segundos
+                    new Handler().postDelayed(() -> {
+                        animationOverlay.setVisibility(view.GONE);
+                    }, 3000);
                 } else {
-                    Toast.makeText(this, "Respuesta incorrecta, inténtalo de nuevo", Toast.LENGTH_SHORT).show(); // Mensaje para respuesta incorrecta
+                    Toast.makeText(this, "Respuesta incorrecta, inténtalo de nuevo", Toast.LENGTH_SHORT).show();
                 }
             } else {
-                Toast.makeText(this, "Por favor ingresa un año", Toast.LENGTH_SHORT).show(); // Mensaje si no ingresó un valor
+                Toast.makeText(this, "Por favor ingresa un año", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -8,6 +8,7 @@
     tools:context=".HomeActivity"
     android:orientation="vertical">
 
+    <!-- Contenido principal de la pantalla -->
     <LinearLayout
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
@@ -19,17 +20,13 @@
         <ImageView
             android:layout_width="116dp"
             android:layout_height="match_parent"
-            android:src="@drawable/logo">
-        </ImageView>
-
+            android:src="@drawable/logo" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:background="@color/black"
-        >
-
-    </LinearLayout>
+        android:background="@color/black" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,10 +43,30 @@
             android:text="@string/welcome"
             android:textColor="@color/black"
             android:textSize="50sp"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold" />
 
+        <!-- Contenedor para la animación -->
+
+        <FrameLayout
+            android:id="@+id/animation_overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:gravity="center">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false"
+                app:lottie_rawRes="@raw/check_animation" />
+        </FrameLayout>
+
+        <!-- Contenedor de la pregunta y botón -->
         <LinearLayout
+            android:id="@+id/container_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -63,9 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/age"
-                android:textSize="20sp">
-
-            </TextView>
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/Respuesta"
@@ -73,22 +88,15 @@
                 android:layout_height="30dp"
                 android:background="@drawable/border_input"
                 android:inputType="number"
-                android:paddingStart="10dp">
-
-            </EditText>
+                android:paddingStart="10dp" />
 
             <Button
                 android:id="@+id/Btn_Respuesta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="@string/btn_question">
-
-            </Button>
-
+                android:text="@string/btn_question" />
         </LinearLayout>
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -103,10 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/copyright"
-            android:layout_gravity="center">
-        </TextView>
-
+            android:layout_gravity="center" />
     </LinearLayout>
-
 
 </RelativeLayout>
