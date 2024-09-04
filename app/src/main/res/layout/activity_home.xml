@@ -12,14 +12,14 @@
     <LinearLayout
         android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="wrap_content"
         android:background="@color/Background"
         android:gravity="center"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="116dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
             android:src="@drawable/logo" />
     </LinearLayout>
 
@@ -43,26 +43,7 @@
             android:text="@string/welcome"
             android:textColor="@color/black"
             android:textSize="50sp"
-            android:textStyle="bold" />
-
-        <!-- Contenedor para la animación -->
-
-        <FrameLayout
-            android:id="@+id/animation_overlay"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:visibility="gone"
-            android:gravity="center">
-
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/animationView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:lottie_autoPlay="false"
-                app:lottie_loop="false"
-                app:lottie_rawRes="@raw/check_animation" />
-        </FrameLayout>
+            android:textStyle="bold"/>
 
         <!-- Contenedor de la pregunta y botón -->
         <LinearLayout
@@ -97,12 +78,28 @@
                 android:layout_margin="20dp"
                 android:text="@string/btn_question" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/Btn_DatosUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mostrar Datos"
+            android:onClick="DatosUsuario" />
+
+        <TextView
+            android:id="@+id/user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+        </TextView>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:background="@color/Footer"
         android:gravity="center"
         android:orientation="horizontal">
@@ -111,7 +108,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/copyright"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:padding="10dp"/>
     </LinearLayout>
+
+    <!-- FrameLayout al final, para que esté por encima de todo -->
+    <FrameLayout
+        android:id="@+id/animation_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <!-- Fondo semitransparente -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000" /> <!-- Fondo semitransparente -->
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/check_animation" />
+
+    </FrameLayout>
 
 </RelativeLayout>
