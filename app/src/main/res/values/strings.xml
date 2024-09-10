@@ -27,6 +27,8 @@
     <string name="welcome">¡Bienvenido!</string>
     <string name="age">Escribe el año actual</string>
     <string name="btn_question">Responder</string>
+    <string name="btn_datos">Mostrar Datos</string>
+    <string name="btn_camera">Abrir Cámara</string>
     <string name="copyright">by SoundBike 2024 ©</string>
 
 
