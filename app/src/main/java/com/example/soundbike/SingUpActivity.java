@@ -15,6 +15,12 @@ public class SingUpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Inicialización de variables
+
+        UserProfileActivity perfil_usuario;
+
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sing_up);

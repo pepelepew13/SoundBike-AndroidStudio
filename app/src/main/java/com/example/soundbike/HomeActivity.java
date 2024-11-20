@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity {
         animationOverlay = findViewById(R.id.animation_overlay); // FrameLayout que contiene la animación
         animationView = findViewById(R.id.animationView); // LottieAnimationView
 
-        perfil_usuario = new UserProfileActivity(1000000,(byte) 17,"Sebastian","Alzate");
+        perfil_usuario = new UserProfileActivity(0,"","",);
 
         // Listener para el botón
         btnRespuesta.setOnClickListener(view -> {

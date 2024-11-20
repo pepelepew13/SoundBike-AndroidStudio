@@ -10,15 +10,15 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class UserProfileActivity extends AppCompatActivity {
 
+    private static int idCounter = 1; // Variable estática para autoincrementar
     int id;
-    byte edad;
-    String nombre,apellido;
+    String user,email,password;
 
-    public UserProfileActivity(int id, byte edad, String nombre, String apellido) {
-        this.id = id;
-        this.edad = edad;
-        this.nombre = nombre;
-        this.apellido = apellido;
+    public UserProfileActivity(int id, String user, String email, String password) {
+        this.id = idCounter++;
+        this.user = user;
+        this.email = email;
+        this.password = password;
     }
 
     public int getId() {
@@ -29,27 +29,27 @@ public class UserProfileActivity extends AppCompatActivity {
         this.id = id;
     }
 
-    public byte getEdad() {
-        return edad;
+    public String getUser() {
+        return user;
     }
 
-    public void setEdad(byte edad) {
-        this.edad = edad;
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getPassword() {
+        return password;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
